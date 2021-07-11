@@ -24,6 +24,11 @@
                     <td>{{nombre | lowercase}}</td>
                 </tr>
                 <tr>
+                    <td>{{nombre3}}</td>
+                    <td>Capitalizado</td>
+                    <td>{{nombre3 | capitalizado}}</td>
+                </tr>
+                <tr>
                     <td>{{nombre}}</td>
                     <td>slice:3</td>
                     <td>{{nombre | slice:3}}</td>
@@ -81,8 +86,28 @@
                 </tr>
                 <tr>
                     <td>{{fecha}}</td>
-                    <td>date: 'MMMM - dd'</td>
-                    <td>{{fecha | date: 'MMMM - dd'}}</td>
+                    <td>date: 'MMMM - dd - fr': '':'fr'</td>
+                    <td>{{fecha | date: 'MMMM - dd - y': '':'fr'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date: 'shortDate'</td>
+                    <td>{{fecha | date: 'shortDate'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date: 'shortTime'</td>
+                    <td>{{fecha | date: 'shortTime':'a'}}</td>
+                </tr>
+                <tr>
+                    <td>{{fecha}}</td>
+                    <td>date: 'MMMM - dd - y': '':'{{idioma}}'
+                        <br>
+                        <button class="mr-1 btn btn-primary" (click)="cambiarIdioma('es')">Español</button>
+                        <button class="mr-1 btn btn-secondary" (click)="cambiarIdioma('en')">Inglés</button>
+                        <button class="btn btn-success" (click)="cambiarIdioma('fr')">Francés</button>
+                    </td>
+                    <td>{{fecha | date: 'MMMM - dd - y': '':idioma}}</td>
                 </tr>
             </tbody>
         </table>
@@ -101,5 +126,13 @@
         </div>
 
 
+    </div>
+</div>
+
+<h3 class="mt-4 mb-5">DomSeguro</h3>
+<div class="row">
+    <div class="col">
+        <iframe width="560" height="315" [src]="videoUrl | domseguro" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
     </div>
 </div>
